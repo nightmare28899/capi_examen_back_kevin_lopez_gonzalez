@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         /* i need get the user with his address */
         $users = User::join('user_domicilio', 'user_domicilio.user_id', '=', 'users.id')
-             ->select('users.*', DB::raw('TIMESTAMPDIFF(YEAR, users.fecha_nacimiento, CURDATE()) AS edad'))
+             ->select('users.*', DB::raw('TIMESTAMPDIFF(YEAR, users.fecha_nacimiento, CURDATE()) AS edad'), 'user_domicilio.domicilio', 'user_domicilio.numero_exterior', 'user_domicilio.colonia', 'user_domicilio.cp', 'user_domicilio.ciudad')
              ->get();
 
         return response()->json($users);
