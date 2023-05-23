@@ -71,3 +71,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 db_port:3306 
 db_database:capi_examen
 db_username:root
+db_password:
